@@ -287,8 +287,8 @@ section h2{
    DATE & CALENDAR
 ========================= */
 .hero-date{
-    font-size:6rem;
-    font-weight:800;
+    font-size:4rem;
+    font-weight:700;
     color:#d6ac60;
     text-align:center;
     margin:15px 0;
@@ -361,8 +361,8 @@ section h2{
     border-radius:14px;
     background:linear-gradient(135deg, #e6c0a6, #e8cec0);
     color:white;
-    font-weight:700;
-    font-size: 0.9rem;
+    font-weight:800;
+    font-size: 1rem;
     box-shadow: 0 6px 18px rgba(230,157,106,.3);
     animation:pulseDay 2s infinite;
 }
