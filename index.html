@@ -127,9 +127,12 @@
             <button class="option active" data-val="Այո">Այո</button>
             <button class="option" data-val="Ոչ">Ոչ</button>
         </div>
+
+        <p class="count-label" style="margin-bottom: 5px; font-family: 'Montserrat', sans-serif; font-size: 14px;">Հյուրերի քանակը</p>
         <div id="countBox">
             <input type="number" id="guestCount" min="1" value="1">
         </div>
+
         <textarea id="guestWish" placeholder="Ձեր բարեմաղթանքը"></textarea>
         <button id="sendBtn">Հաստատել</button>
         <button id="closeModalBtn" class="close-btn">Փակել</button>
@@ -151,8 +154,8 @@
 <script src="script.js"></script>
 <script>
     AOS.init({
-        duration: 1500, // Անիմացիայի տևողությունը (միլիվայրկյաններով)
-        once: true,     // Անիմացիան կատարվի միայն մեկ անգամ՝ scroll անելիս
+        duration: 1500,
+        once: true,
     });
 </script>
 </body>
