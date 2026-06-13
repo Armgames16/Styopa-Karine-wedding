@@ -137,15 +137,19 @@ const sendBtn = document.getElementById("sendBtn");
 if (sendBtn) {
     sendBtn.onclick = async () => {
         const nameInput = document.getElementById("guestName");
+        const countInput = document.getElementById("guestCount");
+        const wishInput = document.getElementById("guestWish");
+
         const name = nameInput ? nameInput.value.trim() : "";
-        const guestCount = currentStatus === "Այո" ? document.getElementById("guestCount").value : 0;
-        const guestWish = document.getElementById("guestWish").value;
+        const guestCount = currentStatus === "Այո" && countInput ? countInput.value : 0;
+        const guestWish = wishInput ? wishInput.value.trim() : "";
 
         if (!name) {
             alert("Խնդրում ենք գրել Ձեր անունը");
             return;
         }
 
+        // Հայերեն, ռուսերեն, անգլերեն տառերի և բացատների Regex
         const nameRegex = /^[a-zA-Zа-яА-ЯԱ-Ֆա-ֆև\s]+$/;
         if (!nameRegex.test(name)) {
             alert("Անունը կարող է պարունակել միայն տառեր");
@@ -164,7 +168,7 @@ if (sendBtn) {
                     body: JSON.stringify({
                         name,
                         status: currentStatus,
-                        count: guestCount,
+                        count: Number(guestCount),
                         wish: guestWish
                     })
                 }
@@ -177,9 +181,12 @@ if (sendBtn) {
                     popup.style.display = "block";
                     setTimeout(() => { popup.style.display = "none"; }, 4000);
                 }
+
+                // Մաքրում ենք դաշտերը ճիշտ ձևով
                 modal.style.display = "none";
                 if (nameInput) nameInput.value = "";
-                document.getElementById("guestWish").value = "";
+                if (wishInput) wishInput.value = "";
+                if (countInput) countInput.value = "1";
             } else {
                 alert("Սխալ տեղի ունեցավ, նորից փորձեք։");
             }
